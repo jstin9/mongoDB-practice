@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Student Management System</h1>
+        <button id="addStudentBtn">Add New Student</button>
+    </header>
+
+    <section class="filters">
+        <h2>Filter Students</h2>
+        <form id="filterForm">
+            <div class="form-group">
+                <label for="faculty">Faculty:</label>
+                <input type="text" id="faculty" name="faculty">
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="number" id="course" name="course" min="1" max="6">
+            </div>
+
+            <div class="form-group">
+                <label for="scholarship">Scholarship:</label>
+                <select id="scholarship" name="scholarship">
+                    <option value="">All</option>
+                    <option value="true">Receiving</option>
+                    <option value="false">Not Receiving</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="group">Group:</label>
+                <input type="number" id="group" name="group">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="16" max="65">
+            </div>
+
+            <div class="form-group">
+                <label for="sortField">Sort by:</label>
+                <select id="sortField" name="sortField">
+                    <option value="">-- None --</option>
+                    <option value="firstName">First Name</option>
+                    <option value="lastName">Last Name</option>
+                    <option value="age">Age</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="course">Course</option>
+                    <option value="group">Group</option>
+                    <option value="scholarship">Scholarship</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sortDirection">Order:</label>
+                <select id="sortDirection" name="sortDirection">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" id="applyFilters">Apply Filters</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="students">
+        <h2>Student List</h2>
+        <div id="studentCount">Loading students...</div>
+        <div id="studentsContainer"></div>
+    </section>
+
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Student</h2>
+            <form id="addStudentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="modalFaculty">Faculty *</label>
+                    <input type="text" id="modalFaculty" name="faculty" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalCourse">Course *</label>
+                        <select id="modalCourse" name="course" required>
+                            <option value="">Select course</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                            <option value="5">5th Year</option>
+                            <option value="6">6th Year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modalGroup">Group *</label>
+                        <input type="number" id="modalGroup" name="group" min="1" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalAge">Age *</label>
+                        <input type="number" id="modalAge" name="age" min="16" max="65" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Scholarship *</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="scholarship" value="true" required> Receiving
+                            </label>
+                            <label>
+                                <input type="radio" name="scholarship" value="false"> Not Receiving
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Add Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
