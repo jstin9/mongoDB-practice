@@ -36,3 +36,7 @@
 | PUT        | `api/students/{id}`                              | Оновити студента за ID.                                                                                          |
 | PATCH      | `api/students/{id}`                              | Частково оновити студента за ID.                                                                                 |
 | DELETE     | `api/students/{id}`                              | Видалити студента за ID.                                                                                         |
+
+## Візуалізація інтерфейсу
+### Головна сторінка
+![Головна сторінка](images/main-page.png)
